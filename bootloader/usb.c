@@ -54,9 +54,9 @@ static const struct usb_device_descriptor dev_descr = {
 	.bLength = USB_DT_DEVICE_SIZE,
 	.bDescriptorType = USB_DT_DEVICE,
 	.bcdUSB = 0x0210,
-	.bDeviceClass = 0,
-	.bDeviceSubClass = 0,
-	.bDeviceProtocol = 0,
+	.bDeviceClass = 0xEF,
+	.bDeviceSubClass = 0x02,
+	.bDeviceProtocol = 0x01,
 	.bMaxPacketSize0 = 64,
 	.idVendor = 0x534c,
 	.idProduct = 0x0001,
@@ -73,14 +73,14 @@ static const struct usb_endpoint_descriptor endpoints[2] = {{
 	.bEndpointAddress = ENDPOINT_ADDRESS_IN,
 	.bmAttributes = USB_ENDPOINT_ATTR_INTERRUPT,
 	.wMaxPacketSize = 64,
-	.bInterval = 2,
+	.bInterval = 1,
 }, {
 	.bLength = USB_DT_ENDPOINT_SIZE,
 	.bDescriptorType = USB_DT_ENDPOINT,
 	.bEndpointAddress = ENDPOINT_ADDRESS_OUT,
 	.bmAttributes = USB_ENDPOINT_ATTR_INTERRUPT,
 	.wMaxPacketSize = 64,
-	.bInterval = 2,
+	.bInterval = 1,
 }};
 
 static const struct usb_interface_descriptor iface[] = {{
